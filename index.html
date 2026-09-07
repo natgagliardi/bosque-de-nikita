@@ -1,155 +1,48 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="El Bosque de los Duendes de Nikita — pequeñas criaturas hechas a mano en Argentina.">
-  <title>El Bosque de los Duendes de Nikita</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Genty+Sans&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Los Duendes de Nikita — pequeñas criaturas de porcelana hechas a mano en Argentina.">
+<title>Los Duendes de Nikita · Un bosque hecho a mano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="forest-noise" aria-hidden="true"></div>
-  <div id="fireflies" aria-hidden="true"></div>
-
-  <header class="site-header">
-    <a class="brand" href="#" aria-label="El Bosque de los Duendes de Nikita">
-      <span class="brand-mark">🍄</span>
-      <span>El Bosque de<br><strong>los Duendes de Nikita</strong></span>
-    </a>
-    <nav aria-label="Navegación principal">
-      <a href="#habitantes">Habitantes</a>
-      <a href="#historia">Nuestra historia</a>
-      <a href="#categorias">Categorías</a>
-    </nav>
-    <a class="cart" href="#" aria-label="Carrito">🧺 <span>0</span></a>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero-art" aria-hidden="true">
-        <div class="moon"></div>
-        <div class="tree tree-left"></div>
-        <div class="tree tree-right"></div>
-        <div class="mushroom mushroom-a"><i></i><b></b></div>
-        <div class="mushroom mushroom-b"><i></i><b></b></div>
-        <div class="mushroom mushroom-c"><i></i><b></b></div>
-        <div class="leaf leaf-a">❧</div>
-        <div class="leaf leaf-b">❧</div>
-        <div class="leaf leaf-c">❧</div>
-        <div class="hero-creature creature-a">🧚</div>
-        <div class="hero-creature creature-b">🧝</div>
-      </div>
-
-      <div class="hero-copy">
-        <p class="eyebrow">✦ Un pequeño mundo hecho a mano ✦</p>
-        <h1>Bienvenido al<br><em>Bosque de Nikita</em></h1>
-        <p class="hero-text">
-          Aquí los duendes no nacen en fábricas.<br>
-          Nacen lentamente entre pinceles, porcelana y paciencia.
-        </p>
-        <a class="button button-primary" href="#habitantes">🍄 Entrar al bosque</a>
-      </div>
-
-      <div class="scroll-hint">deslizá para descubrir <span>↓</span></div>
-    </section>
-
-    <section class="intro section" id="historia">
-      <div class="section-stamp">✦</div>
-      <p class="eyebrow">Una historia escondida entre los árboles</p>
-      <h2>Dicen que algunos bosques<br><em>tienen habitantes que no todos pueden ver.</em></h2>
-      <p class="lead">
-        El nuestro está lleno de ellos. Cada criatura es modelada y pintada
-        completamente a mano, con tiempo, paciencia y muchísimo amor.
-      </p>
-      <p class="lead">
-        Algunos son sabios. Algunos traviesos. Algunos prefieren dormir entre hongos.
-        Y quizás uno de ellos esté buscando justamente tu hogar.
-      </p>
-    </section>
-
-    <section class="values section">
-      <article><span>🍄</span><h3>Hechos a mano</h3><p>Modelados y pintados artesanalmente, uno por uno.</p></article>
-      <article><span>🌿</span><h3>Piezas únicas</h3><p>No existen dos exactamente iguales. Cada uno tiene su propia magia.</p></article>
-      <article><span>✨</span><h3>Creaciones con alma</h3><p>Horas de trabajo y un pedacito del corazón de Nikita.</p></article>
-    </section>
-
-    <section class="categories section" id="categorias">
-      <div class="section-heading">
-        <div><p class="eyebrow">Elegí un sendero</p><h2>Explorá el bosque</h2></div>
-        <p>Cada camino guarda habitantes diferentes.</p>
-      </div>
-      <div class="category-grid">
-        <a href="#habitantes" class="category category-forest"><span>🍄</span><strong>Habitantes del bosque</strong><small>Entre raíces y helechos</small></a>
-        <a href="#habitantes" class="category category-night"><span>🌙</span><strong>Criaturas nocturnas</strong><small>Cuando sale la luna</small></a>
-        <a href="#habitantes" class="category category-autumn"><span>🍂</span><strong>Espíritus de otoño</strong><small>Hojas doradas y bellotas</small></a>
-        <a href="#habitantes" class="category category-floral"><span>🌸</span><strong>Duendes florales</strong><small>Entre flores silvestres</small></a>
-        <a href="#habitantes" class="category category-wise"><span>🦉</span><strong>Los sabios</strong><small>Guardianes de secretos</small></a>
-        <a href="#habitantes" class="category category-christmas"><span>🎄</span><strong>Navidad en el bosque</strong><small>Pequeños habitantes festivos</small></a>
-      </div>
-    </section>
-
-    <section class="quote-section">
-      <div class="quote-mushrooms" aria-hidden="true">🍄　🌱　🍄</div>
-      <blockquote>“No elegís un duende.<br><em>Los duendes te eligen.</em>”</blockquote>
-      <span>— Una vieja leyenda del bosque</span>
-    </section>
-
-    <section class="catalog section" id="habitantes">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Conocé a nuestros habitantes</p>
-          <h2>Pequeños seres,<br><em>grandes historias.</em></h2>
-        </div>
-        <a class="text-link" href="#">Ver todos los habitantes →</a>
-      </div>
-
-      <div class="product-grid">
-        <article class="product-card">
-          <div class="product-image image-albar"><span class="badge">Pieza única</span><span class="placeholder-creature">🧝</span></div>
-          <div class="product-info"><p class="product-kind">Habitante del viejo roble</p><h3>Albar</h3><p class="product-story">Tranquilo, observador y amigo de los búhos.</p><div class="product-bottom"><strong>$ XX.XXX</strong><a href="#">Conocer su historia</a></div></div>
-        </article>
-        <article class="product-card">
-          <div class="product-image image-luna"><span class="badge">Nocturno</span><span class="placeholder-creature">🧚</span></div>
-          <div class="product-info"><p class="product-kind">Guardián de la luna</p><h3>Luna</h3><p class="product-story">Dicen que aparece cuando el bosque queda en silencio.</p><div class="product-bottom"><strong>$ XX.XXX</strong><a href="#">Conocer su historia</a></div></div>
-        </article>
-        <article class="product-card">
-          <div class="product-image image-mora"><span class="badge">Recién llegado</span><span class="placeholder-creature">🧙</span></div>
-          <div class="product-info"><p class="product-kind">Duende de las moras</p><h3>Mora</h3><p class="product-story">Colecciona flores, frutos y secretos del sendero.</p><div class="product-bottom"><strong>$ XX.XXX</strong><a href="#">Conocer su historia</a></div></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="between-products">
-      <span>🌱</span>
-      <p>“Los bosques siempre esconden aquello que estamos preparados para encontrar.”</p>
-      <span>🍄</span>
-    </section>
-
-    <section class="newsletter section">
-      <div>
-        <p class="eyebrow">Una lucecita entre los árboles</p>
-        <h2>Recibí noticias<br><em>del bosque.</em></h2>
-      </div>
-      <form>
-        <label class="sr-only" for="email">Tu email</label>
-        <input id="email" type="email" placeholder="Tu email..." required>
-        <button class="button button-primary" type="submit">Dejar una lucecita ✨</button>
-      </form>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="roots" aria-hidden="true">╰─╮　🍄　╭─╯　🌿　╰─╮　🍄　╭─╯</div>
-    <p class="footer-magic">✦　🍄　✦　🌿　✦</p>
-    <h2>Gracias por visitar<br><em>nuestro pequeño bosque.</em></h2>
-    <p>Esperamos que alguno de nuestros habitantes<br>encuentre un rincón especial en tu hogar.</p>
-    <p class="signature">Con cariño,<br><strong>Los Duendes de Nikita</strong></p>
-    <div class="footer-bottom"><span>Hecho a mano en Argentina 🇦🇷</span><span>© 2026 El Bosque de Nikita</span></div>
-  </footer>
-
-  <script src="js/app.js"></script>
-</body>
-</html>
+<div class="grain" aria-hidden="true"></div><div id="fireflies" aria-hidden="true"></div>
+<div class="topbar"><span>✦ Hechos a mano con amor en Argentina</span><span>☼ Envíos a todo el país</span><span>♡ Medios de pago seguros</span></div>
+<header class="header">
+<a class="logo" href="#inicio"><span class="logo-mushroom">🍄</span><span><small>EL BOSQUE DE</small><b>LOS DUENDES<br>DE NIKITA</b></span></a>
+<nav><a href="#inicio">Inicio</a><a href="#habitantes">Duendes</a><a href="#categorias">Categorías</a><a href="#historia">Nuestra historia</a><a href="#contacto">Contacto</a></nav>
+<div class="header-actions"><button aria-label="Buscar" data-action="search">⌕</button><button aria-label="Favoritos">♡</button><button class="bag" aria-label="Carrito">👜<i>0</i></button></div>
+</header>
+<main id="inicio">
+<section class="hero">
+<div class="hero-deco deco-one">✿</div><div class="hero-deco deco-two">❧</div><div class="hero-deco deco-three">✦</div>
+<div class="hero-copy"><p class="eyebrow">✦ Un pequeño mundo hecho a mano ✦</p><h1>Bienvenidos al<br><em>Bosque</em> de los<br><span>Duendes de Nikita</span> ♡</h1><p>Acá los duendes no nacen en fábricas.<br>Nacen despacito, entre porcelana, pinceles, naturaleza y paciencia.</p><a class="btn btn-dark" href="#habitantes">Descubrir los duendes <span>→</span></a></div>
+<div class="hero-scene"><div class="moon"></div><div class="forest-layer"></div><div class="hero-mushroom big">🍄</div><div class="hero-mushroom small">🍄</div><div class="hero-placeholder"><span>Tu foto de portada</span><small>Espacio reservado para una imagen del taller o del bosque</small></div><div class="spark s1">✦</div><div class="spark s2">✦</div><div class="spark s3">•</div></div>
+<div class="scroll">EXPLORÁ EL BOSQUE <span>↓</span></div>
+</section>
+<section class="promise">
+<div><span>🍄</span><h3>Hechos completamente a mano</h3><p>Cada duende es modelado y pintado artesanalmente, uno por uno.</p></div>
+<div><span>🌿</span><h3>Piezas únicas</h3><p>No hay dos iguales. Cada criatura tiene su propia expresión y personalidad.</p></div>
+<div><span>✨</span><h3>Creaciones con alma</h3><p>Horas de trabajo, detalles diminutos y muchísimo amor en cada pieza.</p></div>
+</section>
+<section class="intro section" id="historia"><p class="eyebrow">Una historia escondida entre los árboles</p><h2>Hay mundos que solamente<br><em>se descubren despacito.</em></h2><p class="lead">Los Duendes de Nikita es un pequeño universo de criaturas de porcelana fría hechas a mano en Argentina. Cada una nace con su propio carácter, su propia historia y un rincón del bosque al que pertenece.</p><div class="ornament">❧　🍄　❧</div></section>
+<section class="categories section" id="categorias"><div class="section-head"><div><p class="eyebrow">Elegí tu sendero</p><h2>Explorá los rincones<br><em>del bosque</em></h2></div><p>Encontrá la familia de duendes que más te guste.</p></div><div class="category-grid">
+<a class="category c1" href="#habitantes"><span>🍄</span><b>Otoño</b><small>Hojas, hongos y bellotas</small></a><a class="category c2" href="#habitantes"><span>🌿</span><b>Bosque</b><small>Habitantes entre raíces</small></a><a class="category c3" href="#habitantes"><span>☾</span><b>Nocturnos</b><small>Cuando aparece la luna</small></a><a class="category c4" href="#habitantes"><span>🌸</span><b>Florales</b><small>Pequeños guardianes de flores</small></a><a class="category c5" href="#habitantes"><span>🦉</span><b>Sabios</b><small>Guardianes de secretos</small></a><a class="category c6" href="#habitantes"><span>🧚</span><b>Hadas y amigos</b><small>Todo el bosque reunido</small></a><a class="category c7" href="#habitantes"><span>🎄</span><b>Navidad</b><small>Magia para celebrar</small></a><a class="category c8" href="#habitantes"><span>♡</span><b>Coleccionistas</b><small>Piezas para atesorar</small></a>
+</div></section>
+<section class="quote"><div>🍄　🌿　🍄</div><blockquote>“Tal vez no elegís un duende.<br><em>Tal vez el duende te encuentra a vos.</em>”</blockquote><small>— Una vieja leyenda del bosque</small></section>
+<section class="catalog section" id="habitantes"><div class="section-head"><div><p class="eyebrow">Conocé a nuestros habitantes</p><h2>Duendes destacados</h2></div><a class="underlink" href="#habitantes">Ver todos →</a></div>
+<div class="products">
+<article class="product"><div class="photo"><span class="photo-note">FOTO DEL DUENDE</span><span class="tag">Pieza única</span><button class="heart">♡</button></div><div class="product-body"><small>Habitante del bosque</small><h3>Brisita</h3><p>Una pequeña guardiana de los hongos y las flores. Tranquila, curiosa y muy amiga de los días de otoño.</p><div><strong>$ 38.000</strong><button class="adopt">Adoptar ♡</button></div></div></article>
+<article class="product"><div class="photo photo-two"><span class="photo-note">FOTO DEL DUENDE</span><span class="tag">Nocturno</span><button class="heart">♡</button></div><div class="product-body"><small>Guardián de la luna</small><h3>Mullido</h3><p>Dicen que duerme entre hojas hasta que el bosque queda en silencio. Su especialidad: acompañar sueños.</p><div><strong>$ 42.000</strong><button class="adopt">Adoptar ♡</button></div></div></article>
+<article class="product"><div class="photo photo-three"><span class="photo-note">FOTO DEL DUENDE</span><span class="tag">Recién llegado</span><button class="heart">♡</button></div><div class="product-body"><small>Duende de las moras</small><h3>Hojaluz</h3><p>Colecciona frutos, hojitas y secretos del sendero. Tiene fama de aparecer justo donde lo necesitan.</p><div><strong>$ 40.000</strong><button class="adopt">Adoptar ♡</button></div></div></article>
+<article class="product"><div class="photo photo-four"><span class="photo-note">FOTO DEL DUENDE</span><span class="tag">Floral</span><button class="heart">♡</button></div><div class="product-body"><small>Espíritu de las flores</small><h3>Flora</h3><p>Un alma dulce entre pétalos y pequeñas hojas. Ideal para quienes aman los rincones llenos de color.</p><div><strong>$ 39.000</strong><button class="adopt">Adoptar ♡</button></div></div></article>
+</div><div class="center"><a class="btn btn-outline" href="#habitantes">Ver todos los duendes <span>→</span></a></div></section>
+<section class="story section"><div class="story-photo"><span>FOTO DEL TALLER</span><small>Espacio reservado para una foto de Nikita creando</small></div><div class="story-copy"><p class="eyebrow">Detrás de cada criatura</p><h2>Un mundo creado<br><em>desde el corazón.</em></h2><p>Los Duendes de Nikita nacen del amor por la naturaleza, por las pequeñas cosas y por la magia que habita en lo simple.</p><p>Cada creación está hecha a mano con dedicación, inspirada en mundos de fantasía y en la belleza de lo auténtico.</p><a class="btn btn-rose" href="#contacto">Conocé nuestra historia ♡</a></div><div class="stamp">HECHO A MANO<br><strong>EN ARGENTINA</strong><span>✦ 🍄 ✦</span></div></section>
+<section class="newsletter"><div><p class="eyebrow">Una lucecita entre los árboles</p><h2>Recibí novedades<br><em>del bosque.</em></h2><p>Lanzamientos, nuevos habitantes y pequeñas dosis de magia.</p></div><form><input id="email" type="email" placeholder="Tu correo electrónico" required><button class="btn btn-dark">Suscribirme ✦</button></form></section>
+</main>
+<footer class="footer" id="contacto"><div class="footer-main"><div class="footer-brand"><div class="footer-logo">🍄 <span>Los Duendes<br><strong>de Nikita</strong></span></div><p>Creaciones de porcelana fría<br>hechas a mano con amor.</p><div class="social"><a href="#">◎</a><a href="#">◉</a><a href="#">♧</a></div></div><div><h4>Información</h4><a href="#historia">Sobre nosotros</a><a href="#">Preguntas frecuentes</a><a href="#">Envíos y pagos</a><a href="#">Cambios y devoluciones</a></div><div><h4>El bosque</h4><a href="#habitantes">Duendes</a><a href="#categorias">Categorías</a><a href="#">Novedades</a><a href="#">Contacto</a></div><div><h4>Atención</h4><p>WhatsApp<br>+54 11 0000 0000</p><p>Buenos Aires, Argentina</p></div></div><div class="footer-bottom"><span>Hecho a mano en Argentina 🇦🇷</span><span>© 2026 Los Duendes de Nikita</span><span>Hecho con magia ✦</span></div></footer>
+<script src="js/app.js"></script>
+</body></html>
