@@ -2,50 +2,44 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <title>Le Petit Peuple de la Montagne</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@500;600&family=Shrikhand&display=swap" rel="stylesheet">
 <style>
-:root{--gold:#e3b76d;--cream:#f6e6c8;--dark:#05070d}
-*{box-sizing:border-box}html,body{margin:0;background:#02040a;color:white}body{font-family:'Cormorant Garamond',serif;overflow-x:hidden}
-.scene{position:relative;width:100%;min-height:100vh;aspect-ratio:3/2;background:url('assets/bg.svg?v=2') center top/cover no-repeat;overflow:hidden;isolation:isolate}
-.scene:after{content:'';position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.01) 43%,rgba(0,0,0,.06) 52%,rgba(0,0,0,.38) 72%,rgba(0,0,0,.52));pointer-events:none}
-.brand-cover{position:absolute;z-index:1;left:28.4%;top:8.1%;width:43.5%;height:35%;border-radius:50%;background:radial-gradient(ellipse at center,rgba(2,7,18,.97) 0%,rgba(2,7,18,.88) 48%,rgba(2,7,18,.4) 70%,transparent 84%)}
-.logo-cover{position:absolute;z-index:1;left:13%;top:1.2%;width:20%;height:9%;background:radial-gradient(ellipse,rgba(2,7,18,.9),rgba(2,7,18,.35) 70%,transparent)}
-.logo{position:absolute;z-index:5;left:16%;top:2.5%;text-align:center;font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,34px);line-height:.9;text-shadow:0 3px 12px #000}.logo b{font-weight:600}.logo small{display:block;font:600 9px 'DM Sans',sans-serif;letter-spacing:.26em;margin-top:8px;color:#f3e1c5}
-.nav{position:absolute;z-index:6;top:2.6%;left:34%;right:33%;display:flex;justify-content:center;gap:32px;font-size:clamp(11px,1.05vw,17px);text-shadow:0 2px 8px #000}.nav a{color:#fff;text-decoration:none}.nav a:hover{color:var(--gold)}
-.hero-copy{position:absolute;z-index:5;left:31%;top:10.4%;width:38%;text-align:center;text-shadow:0 4px 18px #000}.welcome{font-style:italic;font-size:clamp(24px,2.5vw,40px);line-height:1;margin-bottom:-8px}.hero-copy h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(58px,7.2vw,118px);line-height:.82;margin:0;color:#efd2a1;text-shadow:3px 4px 0 #41263d,7px 9px 0 rgba(0,0,0,.8),0 0 24px rgba(237,182,93,.24)}.sub{margin-top:14px;font:600 clamp(11px,1.2vw,18px) 'DM Sans',sans-serif;letter-spacing:.46em}.rule{color:var(--gold);font-size:18px;margin:7px 0}.tag{font-size:clamp(15px,1.35vw,22px);line-height:1.15;margin:0 auto 14px;color:#f4e6cf}.cta,.more{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:linear-gradient(#edc47f,#cb914c);color:#281608;text-decoration:none;font:600 10px 'DM Sans',sans-serif;letter-spacing:.11em;box-shadow:0 8px 22px #0008}.cta{padding:12px 24px}
-.products-title{position:absolute;z-index:5;left:29%;right:29%;top:46.1%;text-align:center;font-size:clamp(22px,2.25vw,37px);font-style:italic;text-shadow:0 3px 12px #000;color:#fff4df;margin:0}.products-title span{color:var(--gold)}
-.products{position:absolute;z-index:5;left:9.1%;right:9.1%;top:51.5%;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(7,7,8,.12),rgba(30,15,7,.97) 65%);border:1px solid var(--gold);box-shadow:0 15px 38px #000d,inset 0 0 0 2px rgba(228,184,109,.08)}.card:before,.card:after{content:'✧';position:absolute;top:4px;z-index:6;color:var(--gold);font-size:17px}.card:before{left:8px}.card:after{right:8px}.gallery{height:16.4vw;min-height:230px;max-height:315px;display:grid;grid-template-columns:3.2fr 1fr;background:#020203;border-bottom:1px solid var(--gold)}.gallery>.main-img{border-right:1px solid var(--gold)}.gallery img{display:block;width:100%;height:100%;object-fit:cover}.thumbs{display:grid;grid-template-rows:1fr 1fr}.thumbs img:first-child{border-bottom:1px solid var(--gold)}
-.info{text-align:center;padding:8px 9px 11px;min-height:106px;background:radial-gradient(circle at 50% 0,#3a2414 0,#1a0d07 75%)}.name{margin:0;font-size:clamp(24px,2vw,32px);line-height:1;letter-spacing:.08em}.role{font-size:clamp(15px,1.25vw,20px);margin:4px 0 8px;color:#f8ead2}.more{padding:9px 28px}
-.bottom-quote{position:absolute;z-index:5;left:32%;right:32%;bottom:2.7%;text-align:center;font-size:clamp(19px,1.8vw,30px);font-style:italic;text-shadow:0 3px 12px #000;color:#f7e8ce}.bottom-quote b{color:var(--gold);font-weight:400}
-@media(max-width:980px){.scene{min-height:1700px;aspect-ratio:auto;background-position:center top}.brand-cover{left:5%;top:7%;width:90%;height:420px}.logo-cover,.logo,.nav{display:none}.hero-copy{left:6%;top:10%;width:88%}.hero-copy h1{font-size:clamp(56px,13vw,82px)}.products-title{left:8%;right:8%;top:39%}.products{left:7%;right:7%;top:43%;grid-template-columns:1fr;gap:22px}.gallery{height:330px;max-height:none}.bottom-quote{left:8%;right:8%;bottom:1%}}
+html,body{margin:0;padding:0;background:#020713;min-height:100%;}
+body{overflow-x:hidden;}
+.page{position:relative;width:100%;}
+.page img{display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none;}
+.hotspot{position:absolute;display:block;background:transparent;border:0;text-decoration:none;}
+/* hotspots invisibles: mantienen la imagen EXACTA y permiten navegar */
+.h-inicio{left:34.1%;top:2.2%;width:5.4%;height:5.2%;}
+.h-personajes{left:40.2%;top:2.2%;width:7.2%;height:5.2%;}
+.h-historia{left:47.2%;top:2.2%;width:6.8%;height:5.2%;}
+.h-tienda{left:54.2%;top:2.2%;width:4.8%;height:5.2%;}
+.h-contacto{left:59.6%;top:2.2%;width:6.2%;height:5.2%;}
+.h-cta{left:39.7%;top:39.6%;width:17.7%;height:5.8%;}
+.h-bram{left:16.2%;top:83.7%;width:11.2%;height:5.5%;}
+.h-tilo{left:44.1%;top:83.7%;width:11.2%;height:5.5%;}
+.h-nival{left:72.7%;top:83.7%;width:11.2%;height:5.5%;}
+@media(max-width:900px){
+  body{background:#020713;}
+  .page{width:100vw;overflow:auto;}
+  .page img{width:1536px;max-width:none;height:auto;}
+}
 </style>
 </head>
 <body>
-<section class="scene" id="inicio">
-  <div class="brand-cover"></div><div class="logo-cover"></div>
-  <div class="logo"><b>Le Petit Peuple</b><small>DE LA MONTAGNE</small></div>
-  <nav class="nav"><a href="#inicio">Inicio</a><a href="#habitantes">Personajes</a><a href="#historia">La Historia</a><a href="#habitantes">Tienda</a><a href="#contacto">Contacto</a></nav>
-  <header class="hero-copy">
-    <div class="welcome">Bienvenido al</div>
-    <h1>Le Petit Peuple</h1>
-    <div class="sub">DE LA MONTAGNE</div>
-    <div class="rule">──── ✦ ────</div>
-    <p class="tag">Criaturas únicas, nacidas entre montañas, bosques y sueños.</p>
-    <a class="cta" href="#habitantes">CONOCÉ A SUS HABITANTES →</a>
-  </header>
-  <h2 class="products-title" id="habitantes"><span>❧</span> Conocé a algunos de nuestros habitantes <span>❧</span></h2>
-  <div class="products">
-    <article class="card" data-img="bram"><div class="gallery"><img class="main-img" alt="Bram"><div class="thumbs"><img alt="Detalle de Bram"><img alt="Detalle de Bram"></div></div><div class="info"><h3 class="name">BRAM</h3><p class="role">El Guardián de los Senderos</p><a class="more" href="#">VER MÁS →</a></div></article>
-    <article class="card" data-img="tilo"><div class="gallery"><img class="main-img" alt="Tilo"><div class="thumbs"><img alt="Detalle de Tilo"><img alt="Detalle de Tilo"></div></div><div class="info"><h3 class="name">TILO</h3><p class="role">El Soñador de la Niebla</p><a class="more" href="#">VER MÁS →</a></div></article>
-    <article class="card" data-img="nival"><div class="gallery"><img class="main-img" alt="Nival"><div class="thumbs"><img alt="Detalle de Nival"><img alt="Detalle de Nival"></div></div><div class="info"><h3 class="name">NIVAL</h3><p class="role">El Amigo Silencioso</p><a class="more" href="#">VER MÁS →</a></div></article>
-  </div>
-  <div class="bottom-quote" id="historia">“Pequeñas criaturas, grandes historias.” <b>✦</b></div><div id="contacto"></div>
-</section>
-<script src="assets/products.js"></script>
-<script>(function(){if(!window.NIKITA_IMAGES)return;document.querySelectorAll('.card[data-img]').forEach(function(card){var raw=window.NIKITA_IMAGES[card.dataset.img];if(!raw)return;var src='data:image/webp;base64,'+raw;card.querySelectorAll('img').forEach(function(img){img.src=src})})})();</script>
-</body></html>
+<main class="page" aria-label="Le Petit Peuple de la Montagne">
+  <img src="assets/bg.svg?v=4" alt="Le Petit Peuple de la Montagne: bosque nocturno, luna, faroles, hongos y habitantes artesanales">
+  <a class="hotspot h-inicio" href="#" aria-label="Inicio"></a>
+  <a class="hotspot h-personajes" href="#personajes" aria-label="Personajes"></a>
+  <a class="hotspot h-historia" href="#historia" aria-label="La Historia"></a>
+  <a class="hotspot h-tienda" href="#tienda" aria-label="Tienda"></a>
+  <a class="hotspot h-contacto" href="#contacto" aria-label="Contacto"></a>
+  <a class="hotspot h-cta" href="#personajes" aria-label="Conocé a sus habitantes"></a>
+  <a class="hotspot h-bram" href="#bram" aria-label="Ver más sobre Bram"></a>
+  <a class="hotspot h-tilo" href="#tilo" aria-label="Ver más sobre Tilo"></a>
+  <a class="hotspot h-nival" href="#nival" aria-label="Ver más sobre Nival"></a>
+  <span id="personajes"></span><span id="historia"></span><span id="tienda"></span><span id="contacto"></span><span id="bram"></span><span id="tilo"></span><span id="nival"></span>
+</main>
+</body>
+</html>
