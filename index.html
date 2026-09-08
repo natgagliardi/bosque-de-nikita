@@ -10,7 +10,7 @@
 html,body{margin:0;padding:0;width:100%;min-height:100%;background:#020713}
 body{overflow-x:hidden}
 .scene{position:relative;width:100%;max-width:1536px;margin:0 auto;background:#020713;min-height:100vh}
-#forest{display:block;width:100%;height:auto;opacity:0;transition:opacity .25s ease;user-select:none;-webkit-user-drag:none}
+#forest{display:block;width:100%;height:auto;opacity:0;transition:opacity .2s ease;user-select:none;-webkit-user-drag:none}
 #forest.ready{opacity:1}
 .loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#f3dfb8;font:600 16px Georgia,serif;letter-spacing:.08em;background:#020713;z-index:2}
 .loading.hidden{display:none}
@@ -46,12 +46,13 @@ body{overflow-x:hidden}
   const img=document.getElementById('forest');
   const loading=document.getElementById('loading');
   try{
-    const paths=Array.from({length:8},(_,i)=>`assets/ref${String(i).padStart(2,'0')}.txt?v=20260908-final`);
-    const parts=await Promise.all(paths.map(async p=>{
+    const paths=Array.from({length:4},(_,i)=>`assets/new${String(i).padStart(2,'0')}.txt?v=20260908-recovered`);
+    const parts=[];
+    for(const p of paths){
       const r=await fetch(p,{cache:'no-store'});
       if(!r.ok) throw new Error('No se pudo cargar '+p);
-      return (await r.text()).trim();
-    }));
+      parts.push((await r.text()).trim());
+    }
     img.onload=()=>{img.classList.add('ready');loading.classList.add('hidden')};
     img.onerror=()=>{loading.textContent='No se pudo cargar la imagen del bosque.'};
     img.src='data:image/webp;base64,'+parts.join('');
