@@ -7,40 +7,120 @@
 <title>Le Petit Peuple de la Montagne</title>
 <style>
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 html,body{margin:0;padding:0;width:100%;min-height:100%;background:#020713}
-body{overflow-x:hidden}
-.scene{position:relative;width:100%;max-width:1536px;margin:0 auto;background:#020713;min-height:100vh}
+body{overflow-x:hidden;color:#f5e7c8;font-family:Georgia,'Times New Roman',serif}
+.scene{position:relative;width:100%;max-width:1536px;margin:0 auto;background:#020713;min-height:100vh;overflow:hidden}
 #forest{display:block;width:100%;height:auto;opacity:0;transition:opacity .2s ease;user-select:none;-webkit-user-drag:none}
 #forest.ready{opacity:1}
-.loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#f3dfb8;font:600 16px Georgia,serif;letter-spacing:.08em;background:#020713;z-index:2}
+.loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#f3dfb8;font:600 16px Georgia,serif;letter-spacing:.08em;background:#020713;z-index:20}
 .loading.hidden{display:none}
-.hotspot{position:absolute;display:block;z-index:5;background:transparent;border:0;text-decoration:none}
+
+/* La imagen base NO se toca. Todo lo interactivo vive arriba. */
+.hotspot{position:absolute;display:block;z-index:8;background:transparent;border:0;text-decoration:none;cursor:pointer;border-radius:18px;-webkit-tap-highlight-color:transparent;outline:none}
+.hotspot::after{content:"";position:absolute;inset:-4px;border-radius:inherit;opacity:0;box-shadow:0 0 0 1px rgba(242,203,127,.32),0 0 24px rgba(255,204,104,.28),inset 0 0 18px rgba(255,230,166,.08);transition:opacity .22s ease,transform .22s ease;transform:scale(.97)}
+.hotspot:hover::after,.hotspot:focus-visible::after,.hotspot:active::after{opacity:1;transform:scale(1)}
+
 .h-inicio{left:34.1%;top:2.2%;width:5.4%;height:5.2%}
 .h-personajes{left:40.2%;top:2.2%;width:7.2%;height:5.2%}
 .h-historia{left:47.2%;top:2.2%;width:6.8%;height:5.2%}
 .h-tienda{left:54.2%;top:2.2%;width:4.8%;height:5.2%}
 .h-contacto{left:59.6%;top:2.2%;width:6.2%;height:5.2%}
-.h-cta{left:39.7%;top:39.6%;width:17.7%;height:5.8%}
-.h-bram{left:16.2%;top:83.7%;width:11.2%;height:5.5%}
-.h-tilo{left:44.1%;top:83.7%;width:11.2%;height:5.5%}
-.h-nival{left:72.7%;top:83.7%;width:11.2%;height:5.5%}
+.h-cta{left:39.7%;top:39.6%;width:17.7%;height:5.8%;border-radius:30px}
+.h-bram{left:14.5%;top:59%;width:20%;height:31%}
+.h-tilo{left:40%;top:59%;width:20%;height:31%}
+.h-nival{left:66%;top:59%;width:20%;height:31%}
+
+/* Cartel de madera de la derecha: cada tablita es clickeable */
+.h-duendes{left:84.2%;top:18.5%;width:12.5%;height:4.6%}
+.h-historias{left:84.2%;top:23.1%;width:12.5%;height:4.6%}
+.h-magia{left:84.2%;top:27.7%;width:12.5%;height:4.6%}
+.h-arte{left:84.2%;top:32.2%;width:12.5%;height:4.6%}
+.h-montana{left:84.2%;top:36.8%;width:12.5%;height:4.6%}
+.h-hogar{left:84.2%;top:41.4%;width:12.5%;height:4.6%}
+
+/* Pequeñas luciérnagas para dar vida sin tapar la ilustración */
+.fireflies{position:absolute;inset:0;pointer-events:none;z-index:4;overflow:hidden}
+.firefly{position:absolute;width:4px;height:4px;border-radius:50%;background:rgba(255,221,142,.92);box-shadow:0 0 8px rgba(255,218,127,.9),0 0 18px rgba(255,195,86,.45);animation:float 5.4s ease-in-out infinite alternate,blink 2.8s ease-in-out infinite}
+@keyframes float{from{transform:translate3d(-5px,4px,0)}to{transform:translate3d(10px,-12px,0)}}
+@keyframes blink{0%,100%{opacity:.18}48%{opacity:1}70%{opacity:.42}}
+@media(prefers-reduced-motion:reduce){.firefly{animation:none}.modal{transition:none}}
+
+/* Ventana inmersiva */
+.modal-shell{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(1,5,14,.76);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px)}
+.modal-shell.open{display:flex}
+.modal{position:relative;width:min(620px,92vw);max-height:84vh;overflow:auto;padding:34px 34px 30px;border:1px solid rgba(225,184,109,.58);border-radius:28px;background:linear-gradient(160deg,rgba(27,22,28,.97),rgba(8,14,25,.98));box-shadow:0 25px 90px rgba(0,0,0,.65),0 0 45px rgba(212,159,69,.13);transform:translateY(8px);animation:modalIn .22s ease forwards}
+@keyframes modalIn{to{transform:translateY(0)}}
+.modal::before{content:"";position:absolute;inset:10px;border:1px solid rgba(231,196,127,.16);border-radius:20px;pointer-events:none}
+.modal-kicker{margin:0 0 8px;text-align:center;text-transform:uppercase;letter-spacing:.24em;font-size:11px;color:#c9a86a}
+.modal h2{margin:0 0 13px;text-align:center;font-weight:500;font-size:clamp(28px,5vw,42px);color:#f6e3b8;text-shadow:0 0 22px rgba(224,171,78,.18)}
+.modal p{margin:0 auto 16px;max-width:500px;text-align:center;line-height:1.7;font-size:16px;color:#e9ddc6}
+.modal .small{font-size:13px;color:#bfae94}
+.modal-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.modal-btn{appearance:none;border:1px solid rgba(218,177,103,.48);background:rgba(198,150,74,.12);color:#f2dfb9;padding:11px 18px;border-radius:999px;font:600 12px Georgia,serif;letter-spacing:.08em;cursor:pointer}
+.modal-btn:hover{background:rgba(218,177,103,.2)}
+.close-modal{position:absolute;top:14px;right:16px;width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.05);color:#e9d9b9;font-size:24px;cursor:pointer;z-index:2}
+
+/* Sutil halo que sigue el puntero en escritorio */
+.pointer-glow{position:fixed;left:0;top:0;width:150px;height:150px;border-radius:50%;pointer-events:none;z-index:50;opacity:0;background:radial-gradient(circle,rgba(255,211,124,.10),rgba(255,211,124,0) 68%);transform:translate(-50%,-50%);transition:opacity .2s ease}
+@media(hover:hover){body:hover .pointer-glow{opacity:1}}
+@media(max-width:700px){
+  .hotspot::after{inset:-2px}
+  .modal{padding:30px 22px 24px;border-radius:22px}
+  .modal h2{font-size:30px}
+  .pointer-glow{display:none}
+}
 </style>
 </head>
 <body>
-<main class="scene" aria-label="Le Petit Peuple de la Montagne">
+<main class="scene" id="scene" aria-label="Le Petit Peuple de la Montagne">
   <div id="loading" class="loading">Cargando el bosque…</div>
   <img id="forest" alt="Le Petit Peuple de la Montagne">
-  <a class="hotspot h-inicio" href="#" aria-label="Inicio"></a>
-  <a class="hotspot h-personajes" href="#personajes" aria-label="Personajes"></a>
-  <a class="hotspot h-historia" href="#historia" aria-label="La Historia"></a>
-  <a class="hotspot h-tienda" href="#tienda" aria-label="Tienda"></a>
-  <a class="hotspot h-contacto" href="#contacto" aria-label="Contacto"></a>
-  <a class="hotspot h-cta" href="#personajes" aria-label="Conocé a sus habitantes"></a>
-  <a class="hotspot h-bram" href="#bram" aria-label="Ver más sobre Bram"></a>
-  <a class="hotspot h-tilo" href="#tilo" aria-label="Ver más sobre Tilo"></a>
-  <a class="hotspot h-nival" href="#nival" aria-label="Ver más sobre Nival"></a>
-  <span id="personajes"></span><span id="historia"></span><span id="tienda"></span><span id="contacto"></span><span id="bram"></span><span id="tilo"></span><span id="nival"></span>
+
+  <div class="fireflies" aria-hidden="true">
+    <i class="firefly" style="left:13%;top:28%;animation-delay:.4s"></i>
+    <i class="firefly" style="left:23%;top:44%;animation-delay:1.2s"></i>
+    <i class="firefly" style="left:37%;top:19%;animation-delay:2s"></i>
+    <i class="firefly" style="left:48%;top:47%;animation-delay:.7s"></i>
+    <i class="firefly" style="left:61%;top:33%;animation-delay:2.6s"></i>
+    <i class="firefly" style="left:74%;top:22%;animation-delay:1.7s"></i>
+    <i class="firefly" style="left:82%;top:51%;animation-delay:3.1s"></i>
+    <i class="firefly" style="left:30%;top:72%;animation-delay:2.3s"></i>
+    <i class="firefly" style="left:56%;top:78%;animation-delay:1s"></i>
+    <i class="firefly" style="left:89%;top:73%;animation-delay:.2s"></i>
+  </div>
+
+  <button class="hotspot h-inicio" data-action="top" aria-label="Inicio"></button>
+  <button class="hotspot h-personajes" data-action="characters" aria-label="Personajes"></button>
+  <button class="hotspot h-historia" data-modal="historia" aria-label="La Historia"></button>
+  <button class="hotspot h-tienda" data-action="characters" aria-label="Tienda"></button>
+  <button class="hotspot h-contacto" data-modal="contacto" aria-label="Contacto"></button>
+  <button class="hotspot h-cta" data-action="characters" aria-label="Conocé a sus habitantes"></button>
+
+  <button class="hotspot h-bram" data-modal="bram" aria-label="Bram, El Guardián de los Senderos"></button>
+  <button class="hotspot h-tilo" data-modal="tilo" aria-label="Tilo, El Soñador de la Niebla"></button>
+  <button class="hotspot h-nival" data-modal="nival" aria-label="Nival, El Amigo Silencioso"></button>
+
+  <button class="hotspot h-duendes" data-action="characters" aria-label="Duendes"></button>
+  <button class="hotspot h-historias" data-modal="historia" aria-label="Historias"></button>
+  <button class="hotspot h-magia" data-modal="magia" aria-label="Magia"></button>
+  <button class="hotspot h-arte" data-modal="arte" aria-label="Arte"></button>
+  <button class="hotspot h-montana" data-modal="montana" aria-label="Montaña"></button>
+  <button class="hotspot h-hogar" data-modal="hogar" aria-label="Hogar"></button>
 </main>
+
+<div class="modal-shell" id="modalShell" role="dialog" aria-modal="true" aria-hidden="true">
+  <article class="modal" id="modalCard">
+    <button class="close-modal" id="closeModal" aria-label="Cerrar">×</button>
+    <p class="modal-kicker" id="modalKicker">Le Petit Peuple</p>
+    <h2 id="modalTitle"></h2>
+    <p id="modalText"></p>
+    <p class="small" id="modalSmall"></p>
+    <div class="modal-actions" id="modalActions"></div>
+  </article>
+</div>
+<div class="pointer-glow" id="pointerGlow" aria-hidden="true"></div>
+
 <script>
 (async function(){
   const img=document.getElementById('forest');
@@ -60,6 +140,58 @@ body{overflow-x:hidden}
     loading.textContent='No se pudo cargar la imagen del bosque.';
     console.error(e);
   }
+
+  const scene=document.getElementById('scene');
+  const shell=document.getElementById('modalShell');
+  const close=document.getElementById('closeModal');
+  const title=document.getElementById('modalTitle');
+  const text=document.getElementById('modalText');
+  const small=document.getElementById('modalSmall');
+  const kicker=document.getElementById('modalKicker');
+  const actions=document.getElementById('modalActions');
+
+  const content={
+    historia:{k:'El origen',t:'La Historia',p:'Hay bosques que no aparecen en ningún mapa. En este, cada criatura nace lentamente entre manos, imaginación y pequeños accidentes felices. Ninguna es idéntica a otra: cada habitante llega con su propio gesto, su propio carácter y una historia que parece haber empezado antes de ser creado.',s:'Hechos a mano, uno por uno, sin moldes.'},
+    bram:{k:'Habitante del bosque',t:'BRAM',p:'El Guardián de los Senderos. Bram conoce los caminos que aparecen cuando nadie los está buscando. Parece serio, pero se queda cerca de quienes necesitan encontrar el rumbo.',s:'Pieza única · hecha a mano.'},
+    tilo:{k:'Habitante del bosque',t:'TILO',p:'El Soñador de la Niebla. Tilo colecciona silencios, hojas húmedas y sueños que la mañana todavía no terminó de borrar.',s:'Pieza única · hecha a mano.'},
+    nival:{k:'Habitante del bosque',t:'NIVAL',p:'El Amigo Silencioso. Nival habla poco, observa mucho y tiene la extraña costumbre de aparecer justo cuando hace falta compañía.',s:'Pieza única · hecha a mano.'},
+    magia:{k:'Dentro del bosque',t:'Magia',p:'La magia de este lugar no está en que las criaturas se muevan. Está en que, al mirarlas, uno siente que podrían hacerlo en cualquier momento.',s:'Pequeñas criaturas, grandes historias.'},
+    arte:{k:'Hecho a mano',t:'Arte',p:'Cada rostro, arruga, textura, cabello y detalle está trabajado a mano. Por eso no existen dos habitantes exactamente iguales.',s:'Lo artesanal también puede ser irrepetible.'},
+    montana:{k:'El paisaje',t:'Montaña',p:'La montaña es el borde del mundo conocido: niebla, piedra, raíces, senderos y pequeñas luces que se encienden cuando cae la noche.',s:'El bosque empieza donde termina el mapa.'},
+    hogar:{k:'Encontrar un lugar',t:'Hogar',p:'Algunos habitantes parecen elegir dónde quedarse. Tal vez no elegís un duende. Tal vez el duende te encuentra a vos.',s:'Cada pieza busca su casa.'},
+    contacto:{k:'Entrar al bosque',t:'Contacto',p:'Este espacio va a ser el acceso para consultas, encargos y disponibilidad de cada habitante. La base ya está preparada para conectarlo después con Instagram, WhatsApp o una tienda.',s:'Todavía no vinculé ningún dato de contacto para no inventarlo.'}
+  };
+
+  function openModal(key){
+    const c=content[key]; if(!c)return;
+    kicker.textContent=c.k; title.textContent=c.t; text.textContent=c.p; small.textContent=c.s;
+    actions.innerHTML='';
+    if(['bram','tilo','nival'].includes(key)){
+      const b=document.createElement('button'); b.className='modal-btn'; b.textContent='VOLVER AL BOSQUE'; b.onclick=closeModal; actions.appendChild(b);
+    }
+    shell.classList.add('open'); shell.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+    close.focus();
+  }
+  function closeModal(){shell.classList.remove('open');shell.setAttribute('aria-hidden','true');document.body.style.overflowX='hidden';document.body.style.overflowY='auto'}
+  close.addEventListener('click',closeModal);
+  shell.addEventListener('click',e=>{if(e.target===shell)closeModal()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+  function scrollToRatio(r){
+    const rect=scene.getBoundingClientRect();
+    const top=window.scrollY+rect.top;
+    const y=top+scene.offsetHeight*r-window.innerHeight*.18;
+    window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
+  }
+
+  document.querySelectorAll('[data-modal]').forEach(el=>el.addEventListener('click',()=>openModal(el.dataset.modal)));
+  document.querySelectorAll('[data-action]').forEach(el=>el.addEventListener('click',()=>{
+    if(el.dataset.action==='top')window.scrollTo({top:0,behavior:'smooth'});
+    if(el.dataset.action==='characters')scrollToRatio(.56);
+  }));
+
+  const glow=document.getElementById('pointerGlow');
+  window.addEventListener('pointermove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'},{passive:true});
 })();
 </script>
 </body>
