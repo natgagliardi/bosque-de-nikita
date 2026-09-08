@@ -4,6 +4,12 @@
 
 **Bosque Madre 4K**
 
+## Prohibición absoluta
+
+**Queda totalmente prohibido cambiar, reemplazar, regenerar, recolorear, recortar o modificar el fondo de Bosque Madre 4K sin permiso explícito de Nat.**
+
+Si hay duda, primero se pregunta. Nunca se decide solo.
+
 ## Versión que le gusta a Nat
 
 URL de referencia:
@@ -35,14 +41,18 @@ A partir de ahora, las mejoras deben hacerse encima de esta base, sin reemplazar
 - nombres;
 - interacciones;
 - modal de productos/personajes;
+- carrito;
+- búsqueda;
 - footer;
+- datos de contacto;
 - detalles visuales pequeños;
 - adaptación mobile;
-- calidad de imágenes siempre que NO cambie la composición.
+- calidad de imágenes de productos, siempre que NO cambie la composición del fondo.
 
 ## Qué NO se puede hacer sin permiso explícito de Nat
 
 - generar un fondo nuevo;
+- cambiar el fondo actual;
 - cambiar la estructura principal;
 - mover drásticamente las tarjetas;
 - volver a meter productos/personajes dentro del fondo;
